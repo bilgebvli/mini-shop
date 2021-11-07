@@ -1,0 +1,48 @@
+.mini-shop-button {
+  display: inline-block;
+  border: 1px solid transparent;
+  padding: 15px;
+
+  &--focused,
+  &:focus {
+    outline: 0;
+  }
+
+  &--block {
+    display: block;
+    width: 100%;
+  }
+
+  &--flat {
+    border-radius: 0;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--text-left {
+    text-align: left;
+  }
+
+  &--text-right {
+    text-align: right;
+  }
+  &--text-center {
+    text-align: center;
+  }
+  &--text-normal {
+    font-weight: $font-weight-normal;
+  }
+
+  &--route {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+    &:disabled,
+    &.disabled {
+      pointer-events: none;
+    }
+  }
+}
