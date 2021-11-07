@@ -18,10 +18,10 @@
 </template>
 
 <script>
-import BasketItem from "./BasketItem";
+import BasketItem from './BasketItem';
 
 export default {
-  name: "BasketItems",
+  name: 'BasketItems',
   components: {
     BasketItem,
   },
@@ -46,15 +46,15 @@ export default {
   },
   methods: {
     removeBasketItem({ basket }) {
-      this.$emit("update-basket", { basket, url: "deleteBasket" });
+      this.$emit('update-basket', { basket, url: 'deleteBasket' });
     },
     changeBasketItemQuantity({ basketItemIndex, quantity }) {
       let basket = this.$helpers.deepClone(this.basket);
 
       basket[basketItemIndex].quantity = quantity;
-      this.$emit("update-basket", {
+      this.$emit('update-basket', {
         basket: basket[basketItemIndex],
-        url: "editBasket",
+        url: 'editBasket',
       });
     },
   },

@@ -1,12 +1,12 @@
-import Vue from "vue";
-import VueI18n from "vue-i18n";
+import Vue from 'vue';
+import VueI18n from 'vue-i18n';
 
 const numberFormats = {
-  "tr-TR": {
+  'tr-TR': {
     currency: {
-      style: "currency",
-      currency: "TRY",
-      currencyDisplay: "symbol",
+      style: 'currency',
+      currency: 'TRY',
+      currencyDisplay: 'symbol',
       minimumIntegerDigits: 1,
       minimumFractionDigits: 0,
       maximumFractionDigits: 2,
@@ -17,7 +17,7 @@ const numberFormats = {
 Vue.use(VueI18n);
 
 const i18n = new VueI18n({
-  locale: "tr-TR",
+  locale: 'tr-TR',
   numberFormats,
 });
 

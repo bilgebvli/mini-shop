@@ -28,7 +28,7 @@
 
 <script>
 export default {
-  name: "BasketActionButtons",
+  name: 'BasketActionButtons',
   props: {
     basket: {
       type: Array,
@@ -43,18 +43,18 @@ export default {
           id: item.productId,
           amount: Number(item.price),
         }));
-        await this.$store.dispatch("checkout/placeOrder", { basket });
+        await this.$store.dispatch('checkout/placeOrder', { basket });
         this.notification({
-          title: "Succesfully",
-          type: "success",
+          title: 'Succesfully',
+          type: 'success',
         });
         // this.$store.dispatch("basket/updateBasket", { basket: [] });
-        this.$store.commit("basket/setBasket", { basket: [] });
+        this.$store.commit('basket/setBasket', { basket: [] });
         // this.getBasket();
       } catch (e) {
         this.notification({
           title: this.errorHandler(e),
-          type: "error",
+          type: 'error',
         });
       } finally {
         this.hideAppLoading();

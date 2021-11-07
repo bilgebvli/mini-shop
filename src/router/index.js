@@ -1,35 +1,35 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Products from "@/views/products";
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Products from '@/views/products';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "*",
+    path: '*',
     component: () =>
-      import(/* webpackChunkName: "pageNotFound" */ "@/views/pageNotFound"),
+      import(/* webpackChunkName: "pageNotFound" */ '@/views/pageNotFound'),
   },
   {
-    name: "products",
-    path: "/",
+    name: 'products',
+    path: '/',
     component: Products,
   },
   {
-    name: "product",
-    path: "/product",
+    name: 'product',
+    path: '/product',
     component: () =>
-      import(/* webpackChunkName: "product" */ "@/views/product"),
+      import(/* webpackChunkName: "product" */ '@/views/product'),
   },
   {
-    name: "basket",
-    path: "/basket",
-    component: () => import(/* webpackChunkName: "basket" */ "@/views/basket"),
+    name: 'basket',
+    path: '/basket',
+    component: () => import(/* webpackChunkName: "basket" */ '@/views/basket'),
   },
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  mode: 'history',
   base: process.env.BASE_URL,
   routes,
 });

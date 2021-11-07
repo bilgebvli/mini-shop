@@ -26,6 +26,6 @@
 
 <script>
 export default {
-  name: "BasketNoItemsCard",
+  name: 'BasketNoItemsCard',
 };
 </script>

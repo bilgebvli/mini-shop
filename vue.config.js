@@ -1,4 +1,4 @@
-const isDev = process.env.NODE_ENV === "development";
+const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
   css: {
@@ -6,7 +6,7 @@ module.exports = {
     loaderOptions: {
       scss: {
         prependData: (() => {
-          let scssVariables = "";
+          let scssVariables = '';
 
           for (let e in process.env) {
             if (/VUE_APP_/i.test(e)) {
