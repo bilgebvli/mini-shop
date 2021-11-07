@@ -1,0 +1,34 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+//Background Color
+.bg-tangerine {
+  background-color: $tangerine;
+}
+.bg-grey {
+  background-color: #e7e7e7;
+}
+
+//Text Color
+.text-black {
+  color: #000;
+}
+.text-white {
+  color: #fff;
+}
+
+// cursor
+.cursor-pointer {
+  cursor: pointer;
+}
+
+//Border
+.rounded-xs {
+  border-radius: 2px;
+}
+
+//Height
+.h-v-100 {
+  height: 100vh;
+}
