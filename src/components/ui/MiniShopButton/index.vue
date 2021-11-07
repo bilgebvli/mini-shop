@@ -13,11 +13,9 @@ export default {
   props: {
     bgColor: {
       type: String,
-      default: "primary",
     },
     textColor: {
       type: String,
-      default: "primary",
     },
     block: {
       type: Boolean,

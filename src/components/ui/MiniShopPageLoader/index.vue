@@ -1,7 +1,7 @@
 <template>
-  <div :class="componentName">
+  <div>
     <div v-if="value" :class="{ 'container-lg': !noContainer }">
-      <template v-if="type === 'products'">
+      <template>
         <content-loader height="650" width="900">
           <rect x="30" y="20" rx="8" ry="8" width="200" height="200" />
           <rect x="30" y="250" rx="0" ry="0" width="200" height="18" />
@@ -43,7 +43,7 @@
       </template>
     </div>
     <transition :name="transition">
-      <div v-if="showContent" :class="`${componentName}__content`">
+      <div v-if="showContent">
         <slot v-bind="{ show: showContent }"></slot>
       </div>
     </transition>
@@ -59,17 +59,6 @@ export default {
   },
   props: {
     value: {
-      type: Boolean,
-      default: false,
-    },
-    type: {
-      type: String,
-      default: "page",
-      validator: (value) => {
-        return ["products"].includes(value);
-      },
-    },
-    fluid: {
       type: Boolean,
       default: false,
     },
