@@ -39,14 +39,15 @@ export default {
         this.showAppLoading();
         const basket = this.setBasket();
         await this.$store.dispatch("checkout/placeOrder", { basket });
+
+        // Mock api'nin toplu silme işlemi olmadığı için bu methodu ekledim
+        await this.deleteAllBaketItems();
+
+        await this.fetchBasket();
         this.notification({
           title: this.$t("general.orderCompleted"),
           type: "success",
         });
-
-        // Basket Api için kullandığım toolun toplu silme işlemi olmadığı için bu methodu oluşturdum
-        await this.deleteAllBaketItems();
-        this.fetchBasket();
       } catch (e) {
         this.notification({
           title: this.errorHandler(e),
