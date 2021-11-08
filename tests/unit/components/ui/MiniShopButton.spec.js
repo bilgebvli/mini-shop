@@ -115,7 +115,7 @@ describe("Components > Ui > MiniShopButton.vue", () => {
   describe("Computed", () => {
     describe("isRoute", () => {
       it("checks the boolean value returned when props change.", async () => {
-        await wrapper.setProps({ to: { name: "basket" } });
+        await wrapper.setProps({ to: { name: "test" } });
         expect(wrapper.vm.isRoute).to.be.true;
       });
     });
@@ -125,16 +125,17 @@ describe("Components > Ui > MiniShopButton.vue", () => {
           block: true,
           flat: true,
           uppercase: true,
-          to: { name: "basket" },
+          to: { name: "test" },
           bgColor: "tangerine",
           textColor: "black",
-          disabled: false,
+          disabled: true,
         });
         expect(wrapper.vm.buttonOptions).to.deep.equal({
           class: {
             "bg-tangerine": true,
             "mini-shop-button": true,
             "mini-shop-button--block": true,
+            "mini-shop-button--disabled": true,
             "mini-shop-button--flat": true,
             "mini-shop-button--route": true,
             "mini-shop-button--text-center": true,
@@ -144,7 +145,7 @@ describe("Components > Ui > MiniShopButton.vue", () => {
             "mini-shop-button--uppercase": true,
             "text-black": true,
           },
-          disabled: false,
+          disabled: true,
         });
       });
     });

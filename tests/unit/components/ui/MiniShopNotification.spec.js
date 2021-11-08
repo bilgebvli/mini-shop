@@ -36,7 +36,7 @@ describe("Components > ui > MiniShopNotification.vue", () => {
           group: "test",
           position: "top right",
           width: 350,
-          classes: "vue-notification mt-4 p-3 my-style",
+          classes: "vue-notification mt-lg-4 p-3",
           closeOnClick: true,
         });
       });

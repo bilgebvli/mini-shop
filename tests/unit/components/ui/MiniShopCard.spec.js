@@ -52,9 +52,20 @@ describe("Components > Ui > MiniShopCard.vue", () => {
       });
     });
     describe("cardLoaderOptions", () => {
-      it("", () => {
+      it("checks whether function returns correct content or not.", () => {
         expect(wrapper.vm.cardLoaderOptions).to.deep.equal({
           class: { "mini-shop-card__loader": true, "rounded-top": true },
+        });
+      });
+    });
+    describe("cardOptions", () => {
+      it("checks whether function returns correct content or not.", () => {
+        expect(wrapper.vm.cardOptions).to.deep.equal({
+          class: {
+            card: true,
+            "mini-shop-card": true,
+            "mini-shop-card--loading": false,
+          },
         });
       });
     });
