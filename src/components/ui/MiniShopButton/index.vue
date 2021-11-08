@@ -70,6 +70,7 @@ export default {
           [`${this.componentName}--text-center`]: this.textCenter,
           [`${this.componentName}--text-normal`]: this.textNormal,
           [`${this.componentName}--route`]: this.isRoute,
+          [`${this.componentName}--disabled`]: this.disabled,
           [`bg-${this.bgColor}`]: true,
           [`text-${this.textColor}`]: true,
         },

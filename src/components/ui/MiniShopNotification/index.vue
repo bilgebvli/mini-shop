@@ -16,15 +16,10 @@ export default {
         group: this.group,
         position: "top right",
         width: 350,
-        classes: "vue-notification mt-lg-4 p-3 my-style",
+        classes: "vue-notification mt-lg-4 p-3",
         closeOnClick: true,
       };
     },
   },
 };
 </script>
-<style lang="scss">
-.my-style {
-  font-size: 15px;
-}
-</style>
