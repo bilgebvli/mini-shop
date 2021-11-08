@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Roboto:wght@300&display=swap");
+
 //#region: Colors
 $tangerine: #f37127;
 $grey: #e7e7e7;
 //#endregion
 
 //#region: Font Family and Sizes
-$font-family-base: "Calibre";
+$font-family-base: "Open Sans", sans-serif;
 $font-weight-light: 300;
 $font-weight-normal: 400;
 $font-weight-bold: 500;
