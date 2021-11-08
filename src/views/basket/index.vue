@@ -26,12 +26,12 @@
 </template>
 
 <script>
-import BasketItems from "./BasketItems";
-import BasketActionButtons from "./BasketActionButtons";
-import BasketNoItemsCard from "./BasketNoItemsCard";
+import BasketItems from './BasketItems';
+import BasketActionButtons from './BasketActionButtons';
+import BasketNoItemsCard from './BasketNoItemsCard';
 
 export default {
-  name: "Basket",
+  name: 'Basket',
   components: {
     BasketItems,
     BasketNoItemsCard,
@@ -44,7 +44,7 @@ export default {
   },
   computed: {
     basket() {
-      return this.$store.getters["basket/getBasket"];
+      return this.$store.getters['basket/getBasket'];
     },
   },
   async created() {
@@ -54,7 +54,7 @@ export default {
     } catch (e) {
       this.notification({
         title: this.errorHandler(e),
-        type: "error",
+        type: 'error',
       });
     } finally {
       this.loader = false;
@@ -62,20 +62,20 @@ export default {
   },
   methods: {
     async fetchBasket() {
-      await this.$store.dispatch("basket/fetchBasket");
+      await this.$store.dispatch('basket/fetchBasket');
     },
     async updateBasket({ basket, url }) {
       this.basketLoader = true;
       try {
         await this.$store.dispatch(`basket/${url}`, {
           productId: basket.id,
-          ...(url === "editBasket" ? { basket } : null),
+          ...(url === 'editBasket' ? { basket } : null),
         });
         await this.fetchBasket();
       } catch (e) {
         this.notification({
           title: this.errorHandler(e),
-          type: "error",
+          type: 'error',
         });
       } finally {
         this.basketLoader = false;

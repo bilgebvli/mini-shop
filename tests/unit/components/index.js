@@ -1,2 +1,2 @@
-import "./controls";
-import "./ui";
+import './controls';
+import './ui';

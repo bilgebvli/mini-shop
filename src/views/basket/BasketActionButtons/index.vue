@@ -22,36 +22,36 @@
       text-normal
       @click="placeOrder"
     >
-      {{ $t("basket.placeOrder") }}
+      {{ $t('basket.placeOrder') }}
     </mini-shop-button>
   </div>
 </template>
 
 <script>
-import basketMixin from "./../basketMixin";
+import basketMixin from './../basketMixin';
 
 export default {
-  name: "BasketActionButtons",
+  name: 'BasketActionButtons',
   mixins: [basketMixin],
   methods: {
     async placeOrder() {
       try {
         this.showAppLoading();
         const basket = this.setBasket();
-        await this.$store.dispatch("checkout/placeOrder", { basket });
+        await this.$store.dispatch('checkout/placeOrder', { basket });
 
         // Mock api'nin toplu silme işlemi olmadığı için bu methodu ekledim
         await this.deleteAllBaketItems();
 
         await this.fetchBasket();
         this.notification({
-          title: this.$t("general.orderCompleted"),
-          type: "success",
+          title: this.$t('general.orderCompleted'),
+          type: 'success',
         });
       } catch (e) {
         this.notification({
           title: this.errorHandler(e),
-          type: "error",
+          type: 'error',
         });
       } finally {
         this.hideAppLoading();
@@ -65,7 +65,7 @@ export default {
     },
     async deleteAllBaketItems() {
       for (const item of this.basket) {
-        await this.$store.dispatch("basket/deleteBasket", {
+        await this.$store.dispatch('basket/deleteBasket', {
           productId: item.id,
         });
       }

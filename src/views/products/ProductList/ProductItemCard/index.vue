@@ -6,7 +6,7 @@
       class="card-img-top img-fluid mb-4"
     />
     <h5 class="card-title">{{ productItem.name }}</h5>
-    <p class="d-inline mr-2">{{ $n(productItem.price, "currency") }}</p>
+    <p class="d-inline mr-2">{{ $n(productItem.price, 'currency') }}</p>
     <mini-shop-button
       bg-color="tangerine"
       text-color="white"
@@ -15,13 +15,13 @@
       @click="addBasket(productItem)"
       class="d-inline-block px-3 py-2 rounded-xs"
     >
-      {{ $t("products.add") }}
+      {{ $t('products.add') }}
     </mini-shop-button>
   </div>
 </template>
 <script>
 export default {
-  name: "ProductItemCard",
+  name: 'ProductItemCard',
   props: {
     productItem: {
       type: Object,
@@ -29,7 +29,7 @@ export default {
   },
   computed: {
     basket() {
-      return this.$store.getters["basket/getBasket"] || [];
+      return this.$store.getters['basket/getBasket'] || [];
     },
   },
   methods: {
@@ -44,10 +44,10 @@ export default {
         });
 
         if (this.basket.length && product) {
-          apiUrl = "editBasket";
+          apiUrl = 'editBasket';
           quantity = product.quantity += 1;
         } else {
-          apiUrl = "addBasket";
+          apiUrl = 'addBasket';
           quantity = 1;
         }
 
@@ -59,11 +59,11 @@ export default {
           ...(product && { productId: product.id }),
         });
 
-        this.$router.push({ name: "basket" });
+        this.$router.push({ name: 'basket' });
       } catch (e) {
         this.notification({
           title: this.errorHandler(e),
-          type: "error",
+          type: 'error',
         });
       } finally {
         this.hideAppLoading();

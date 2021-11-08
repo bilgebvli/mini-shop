@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: "MiniShopCard",
+  name: 'MiniShopCard',
   props: {
     loading: {
       type: Boolean,
@@ -22,16 +22,16 @@ export default {
   },
   computed: {
     header() {
-      return !!this.$slots["header"];
+      return !!this.$slots['header'];
     },
     footer() {
-      return !!this.$slots["footer"];
+      return !!this.$slots['footer'];
     },
     cardLoaderOptions() {
       return {
         class: {
           [`${this.componentName}__loader`]: true,
-          "rounded-top": true,
+          'rounded-top': true,
         },
       };
     },

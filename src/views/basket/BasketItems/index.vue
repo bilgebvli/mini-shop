@@ -1,7 +1,7 @@
 <template>
   <mini-shop-card class="card mb-3 border-0 shadow-sm" :loading="basketLoader">
     <template slot="header">
-      {{ $t("basket.myCard") }} ({{ totalQuantity }})</template
+      {{ $t('basket.myCard') }} ({{ totalQuantity }})</template
     >
     <template v-for="(basketItem, basketItemIndex) in basket">
       <basket-item
@@ -17,11 +17,11 @@
 </template>
 
 <script>
-import BasketItem from "./BasketItem";
-import basketMixin from "./../basketMixin";
+import BasketItem from './BasketItem';
+import basketMixin from './../basketMixin';
 
 export default {
-  name: "BasketItems",
+  name: 'BasketItems',
   mixins: [basketMixin],
   components: {
     BasketItem,
@@ -37,15 +37,15 @@ export default {
   },
   methods: {
     removeBasketItem({ basket }) {
-      this.$emit("update-basket", { basket, url: "deleteBasket" });
+      this.$emit('update-basket', { basket, url: 'deleteBasket' });
     },
     changeBasketItemQuantity({ basketItemIndex, quantity }) {
       let basket = this.$helpers.deepClone(this.basket);
 
       basket[basketItemIndex].quantity = quantity;
-      this.$emit("update-basket", {
+      this.$emit('update-basket', {
         basket: basket[basketItemIndex],
-        url: "editBasket",
+        url: 'editBasket',
       });
     },
   },

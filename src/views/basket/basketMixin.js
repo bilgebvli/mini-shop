@@ -7,12 +7,12 @@ const basketMixin = {
   },
   computed: {
     basket() {
-      return this.$store.getters["basket/getBasket"];
+      return this.$store.getters['basket/getBasket'];
     },
   },
   methods: {
     async fetchBasket() {
-      await this.$store.dispatch("basket/fetchBasket");
+      await this.$store.dispatch('basket/fetchBasket');
     },
   },
 };

@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: "MiniShopButton",
+  name: 'MiniShopButton',
   props: {
     bgColor: {
       type: String,

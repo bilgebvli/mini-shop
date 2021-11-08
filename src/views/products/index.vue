@@ -18,16 +18,16 @@
 </template>
 
 <script>
-import ProductList from "./ProductList";
+import ProductList from './ProductList';
 
 export default {
-  name: "Products",
+  name: 'Products',
   components: {
     ProductList,
   },
   computed: {
     products() {
-      return this.$store.getters["products/getProducts"];
+      return this.$store.getters['products/getProducts'];
     },
   },
   async created() {
@@ -37,8 +37,8 @@ export default {
     async init() {
       try {
         this.loader = true;
-        await this.$store.dispatch("products/fetchProducts");
-        this.$store.dispatch("basket/fetchBasket");
+        await this.$store.dispatch('products/fetchProducts');
+        this.$store.dispatch('basket/fetchBasket');
       } finally {
         this.loader = false;
       }

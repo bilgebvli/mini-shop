@@ -1,15 +1,15 @@
-import api from "@/api";
+import api from '@/api';
 
 export default {
   async fetchBasket({ commit }) {
     const item = await api
-      .get("https://6182f8f991d76c00172d171e.mockapi.io/api/v1/basket")
+      .get('https://6182f8f991d76c00172d171e.mockapi.io/api/v1/basket')
       .then((res) => res.data.items);
-    commit("setBasket", { basket: item });
+    commit('setBasket', { basket: item });
   },
   async addBasket(context, { basket }) {
     return await api.post(
-      "https://6182f8f991d76c00172d171e.mockapi.io/api/v1/basket",
+      'https://6182f8f991d76c00172d171e.mockapi.io/api/v1/basket',
       basket
     );
   },

@@ -1,42 +1,42 @@
-import { expect } from "chai";
-import { shallowMount, config } from "@vue/test-utils";
-import MiniShopNotification from "@/components/ui/MiniShopNotification/index.vue";
+import { expect } from 'chai';
+import { shallowMount, config } from '@vue/test-utils';
+import MiniShopNotification from '@/components/ui/MiniShopNotification/index.vue';
 config.silent = true;
 config.showDeprecationWarnings = false;
 
-describe("Components > ui > MiniShopNotification.vue", () => {
+describe('Components > ui > MiniShopNotification.vue', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallowMount(MiniShopNotification, {
-      stubs: ["notifications"],
+      stubs: ['notifications'],
     });
   });
 
-  describe("General", () => {
-    it("checks whether componenet was mounted or not.", () => {
+  describe('General', () => {
+    it('checks whether componenet was mounted or not.', () => {
       expect(wrapper.exists()).to.equal(true);
     });
   });
 
-  describe("Props", () => {
-    describe("group", () => {
-      it("checks prop acceptable value type.", () => {
+  describe('Props', () => {
+    describe('group', () => {
+      it('checks prop acceptable value type.', () => {
         expect(wrapper.vm.$options.props.group).to.deep.equal({
           type: String,
-          default: "general",
+          default: 'general',
         });
       });
     });
   });
-  describe("Computed", () => {
-    describe("notificationOptions", () => {
-      it("checks whether function returns correct content or not when props were changed.", async () => {
-        await wrapper.setProps({ group: "test" });
+  describe('Computed', () => {
+    describe('notificationOptions', () => {
+      it('checks whether function returns correct content or not when props were changed.', async () => {
+        await wrapper.setProps({ group: 'test' });
         expect(wrapper.vm.notificationOptions).to.deep.equal({
-          group: "test",
-          position: "top right",
+          group: 'test',
+          position: 'top right',
           width: 350,
-          classes: "vue-notification mt-lg-4 p-3",
+          classes: 'vue-notification mt-lg-4 p-3',
           closeOnClick: true,
         });
       });

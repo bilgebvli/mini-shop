@@ -3,20 +3,20 @@
 </template>
 <script>
 export default {
-  name: "MiniShopNotification",
+  name: 'MiniShopNotification',
   props: {
     group: {
       type: String,
-      default: "general",
+      default: 'general',
     },
   },
   computed: {
     notificationOptions() {
       return {
         group: this.group,
-        position: "top right",
+        position: 'top right',
         width: 350,
-        classes: "vue-notification mt-lg-4 p-3",
+        classes: 'vue-notification mt-lg-4 p-3',
         closeOnClick: true,
       };
     },
