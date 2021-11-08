@@ -12,12 +12,6 @@
 
 <script>
 export default {
-  name: "MiniShopPreloader",
-  props: {
-    transparent: {
-      type: Boolean,
-      default: false,
-    },
-  },
+  name: 'MiniShopPreloader',
 };
 </script>

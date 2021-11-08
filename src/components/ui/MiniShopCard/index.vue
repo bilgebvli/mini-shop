@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ [componentName]: true, card: true }">
+  <div v-bind="cardOptions">
     <div v-if="loading" v-bind="cardLoaderOptions"></div>
     <div class="card-header bg-white pt-4 border-0" v-if="header">
       <slot name="header"></slot>
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: "MiniShopCard",
+  name: 'MiniShopCard',
   props: {
     loading: {
       type: Boolean,
@@ -22,16 +22,25 @@ export default {
   },
   computed: {
     header() {
-      return !!this.$slots["header"];
+      return !!this.$slots['header'];
     },
     footer() {
-      return !!this.$slots["footer"];
+      return !!this.$slots['footer'];
     },
     cardLoaderOptions() {
       return {
         class: {
           [`${this.componentName}__loader`]: true,
-          "rounded-top": true,
+          'rounded-top': true,
+        },
+      };
+    },
+    cardOptions() {
+      return {
+        class: {
+          card: true,
+          [this.componentName]: true,
+          [`${this.componentName}--loading`]: this.loading,
         },
       };
     },

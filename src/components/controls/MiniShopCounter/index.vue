@@ -1,16 +1,21 @@
 <template>
   <div>
-    <div class="counter">
+    <div :class="componentName">
       <button
-        class="counter__button"
+        :class="`${componentName}__button`"
         :disabled="disabledDecrementButton"
         @click="decrement"
       >
         <i class="bi bi-plus"></i>
       </button>
-      <input type="number" class="counter__input" :value="number" disabled />
+      <input
+        type="number"
+        :class="`${componentName}__input`"
+        :value="number"
+        disabled
+      />
       <button
-        class="counter__button"
+        :class="`${componentName}__button`"
         :disabled="disabledIncrementButton"
         @click="increment"
       >
@@ -22,7 +27,7 @@
 
 <script>
 export default {
-  name: "MiniShopCounter",
+  name: 'MiniShopCounter',
   props: {
     value: {
       type: [Number, String],
@@ -47,8 +52,8 @@ export default {
         return this.value;
       },
       set(value) {
-        this.$emit("input", value);
-        this.$emit("change", value);
+        this.$emit('input', value);
+        this.$emit('change', value);
       },
     },
     disabledDecrementButton() {

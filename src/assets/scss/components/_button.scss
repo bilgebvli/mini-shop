@@ -28,11 +28,17 @@
   &--text-right {
     text-align: right;
   }
+
   &--text-center {
     text-align: center;
   }
+
   &--text-normal {
     font-weight: $font-weight-normal;
+  }
+
+  &--disabled {
+    opacity: 0.65;
   }
 
   &--route {

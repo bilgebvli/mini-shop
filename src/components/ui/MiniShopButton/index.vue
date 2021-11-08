@@ -9,15 +9,13 @@
 
 <script>
 export default {
-  name: "MiniShopButton",
+  name: 'MiniShopButton',
   props: {
     bgColor: {
       type: String,
-      default: "primary",
     },
     textColor: {
       type: String,
-      default: "primary",
     },
     block: {
       type: Boolean,
@@ -72,6 +70,7 @@ export default {
           [`${this.componentName}--text-center`]: this.textCenter,
           [`${this.componentName}--text-normal`]: this.textNormal,
           [`${this.componentName}--route`]: this.isRoute,
+          [`${this.componentName}--disabled`]: this.disabled,
           [`bg-${this.bgColor}`]: true,
           [`text-${this.textColor}`]: true,
         },

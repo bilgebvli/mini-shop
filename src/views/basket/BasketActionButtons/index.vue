@@ -9,10 +9,11 @@
       uppercase
       text-normal
       text-center
-      v-text="`<  Continiuse Shopping`"
+      v-text="`<  ${$t('general.shopping.continue')}`"
     >
     </mini-shop-button>
     <mini-shop-button
+      :disabled="basketLoader"
       bg-color="grey"
       text-color="black"
       class="rounded-xs mt-3"
@@ -21,43 +22,52 @@
       text-normal
       @click="placeOrder"
     >
-      Place Order
+      {{ $t('basket.placeOrder') }}
     </mini-shop-button>
   </div>
 </template>
 
 <script>
+import basketMixin from './../basketMixin';
+
 export default {
-  name: "BasketActionButtons",
-  props: {
-    basket: {
-      type: Array,
-      default: () => [],
-    },
-  },
+  name: 'BasketActionButtons',
+  mixins: [basketMixin],
   methods: {
     async placeOrder() {
       try {
         this.showAppLoading();
-        const basket = this.basket.map((item) => ({
-          id: item.productId,
-          amount: Number(item.price),
-        }));
-        await this.$store.dispatch("checkout/placeOrder", { basket });
+        const basket = this.setBasket();
+        await this.$store.dispatch('checkout/placeOrder', { basket });
+
+        // Mock api'nin toplu silme işlemi olmadığı için bu methodu ekledim
+        await this.deleteAllBaketItems();
+
+        await this.fetchBasket();
         this.notification({
-          title: "Succesfully",
-          type: "success",
+          title: this.$t('general.orderCompleted'),
+          type: 'success',
         });
-        // this.$store.dispatch("basket/updateBasket", { basket: [] });
-        this.$store.commit("basket/setBasket", { basket: [] });
-        // this.getBasket();
       } catch (e) {
         this.notification({
           title: this.errorHandler(e),
-          type: "error",
+          type: 'error',
         });
       } finally {
         this.hideAppLoading();
+      }
+    },
+    setBasket() {
+      return this.basket.map((item) => ({
+        id: item.productId,
+        amount: Number(item.price),
+      }));
+    },
+    async deleteAllBaketItems() {
+      for (const item of this.basket) {
+        await this.$store.dispatch('basket/deleteBasket', {
+          productId: item.id,
+        });
       }
     },
   },

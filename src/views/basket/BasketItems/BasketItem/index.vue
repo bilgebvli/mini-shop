@@ -12,7 +12,7 @@
       <div class="col-lg-9">
         <div class="card-body">
           <h5 class="card-title">{{ basketItem.name }}</h5>
-          <p class="card-text">{{ $n(basketItem.price, "currency") }}</p>
+          <p class="card-text">{{ $n(basketItem.price, 'currency') }}</p>
         </div>
       </div>
     </div>
@@ -31,7 +31,7 @@
           class="card-text px-4 py-4 py-lg-1 cursor-pointer"
           @click="removeBasketItem"
         >
-          Remove
+          {{ $t('basket.remove') }}
         </p>
       </div>
     </div>
@@ -39,7 +39,7 @@
 </template>
 <script>
 export default {
-  name: "BasketItem",
+  name: 'BasketItem',
   props: {
     basketItem: {
       type: Object,
@@ -51,10 +51,10 @@ export default {
   },
   methods: {
     removeBasketItem() {
-      this.$emit("remove-basket-item", { basket: this.basketItem });
+      this.$emit('remove-basket-item', { basket: this.basketItem });
     },
     changeBasketItemQuantity(quantity) {
-      this.$emit("change-basket-item-quantity", {
+      this.$emit('change-basket-item-quantity', {
         basketItemIndex: this.basketItemIndex,
         quantity,
       });

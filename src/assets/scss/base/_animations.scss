@@ -18,3 +18,23 @@
     transform: scale(0.9);
   }
 }
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease-in-out;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  transition: opacity 0s;
+}
+
+.fade-in-out-enter-active,
+.fade-in-out-leave-active {
+  transition: opacity 0.5s ease-in-out;
+}
+.fade-in-out-enter,
+.fade-in-out-leave-to {
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+}

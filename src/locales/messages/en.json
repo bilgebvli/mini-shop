@@ -1,0 +1,24 @@
+{
+  "basket": {
+    "description": {
+      "noBasketItem": "You have no items in your shopping basket"
+    },
+    "myCard": "My Card",
+    "placeOrder": "Place Order",
+    "remove": "Remove"
+  },
+  "errors": {
+    "pageNotFound": "Page Not Found"
+  },
+  "general": {
+    "anErrorOccurred": "An error occurred",
+    "orderCompleted": "Order Completed",
+    "shopping": {
+      "continue": "Continue Shopping",
+      "start": "Start Shopping"
+    }
+  },
+  "products": {
+    "add": "Add Basket"
+  }
+}

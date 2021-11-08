@@ -1,4 +1,4 @@
-import Vue from "vue";
+import Vue from 'vue';
 
 const helpers = {
   deepClone(value) {
@@ -12,20 +12,20 @@ const helpers = {
       str
         .match(regex)
         .map((x) => x.toLowerCase())
-        .join("-")
+        .join('-')
     );
   },
   isEmptyOrNull(value) {
-    return value === null || value === "" || value === undefined;
+    return value === null || value === '' || value === undefined;
   },
   capitalize(value) {
     if (this.isEmptyOrNull(value)) return value;
 
     return value
       .toLowerCase()
-      .split(" ")
+      .split(' ')
       .map((val) => val.charAt(0).toUpperCase() + val.slice(1))
-      .join(" ");
+      .join(' ');
   },
   isJson(str) {
     try {

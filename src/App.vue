@@ -7,10 +7,10 @@
 </template>
 
 <script>
-import MiniShopPreloader from "@/components/ui/MiniShopPreloader";
+import MiniShopPreloader from '@/components/ui/MiniShopPreloader';
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     MiniShopPreloader,
   },

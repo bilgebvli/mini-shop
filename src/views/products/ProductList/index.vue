@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import ProductItemCard from "./ProductItemCard";
+import ProductItemCard from './ProductItemCard';
 export default {
-  name: "ProductList",
+  name: 'ProductList',
   components: {
     ProductItemCard,
   },

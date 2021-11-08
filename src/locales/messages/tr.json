@@ -1,0 +1,24 @@
+{
+  "basket": {
+    "description": {
+      "noBasketItem": "Alışveriş sepetinizde ürün yok"
+    },
+    "myCard": "Alışveriş Sepetim",
+    "placeOrder": "Sipariş Ver",
+    "remove": "Kaldır"
+  },
+  "errors": {
+    "pageNotFound": "Sayfa Bulunamadı"
+  },
+  "general": {
+    "anErrorOccurred": "Bir hata oluştu",
+    "orderCompleted": "Sipariş Tamamlandı",
+    "shopping": {
+      "continue": "Alışverişe Devam Et",
+      "start": "Alışverişe Başla"
+    }
+  },
+  "products": {
+    "add": "Sepete Ekle"
+  }
+}
