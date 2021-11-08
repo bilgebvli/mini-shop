@@ -1,9 +1,8 @@
 <template>
   <mini-shop-card class="card mb-3 border-0 shadow-sm" :loading="basketLoader">
-    <!-- <div class="card-header bg-white pt-4 border-0">
-      My Card ({{ totalQuantity }})
-    </div> -->
-    <template slot="header"> My Card ({{ totalQuantity }})</template>
+    <template slot="header">
+      {{ $t("basket.myCard") }} ({{ totalQuantity }})</template
+    >
     <template v-for="(basketItem, basketItemIndex) in basket">
       <basket-item
         class="py-0"
@@ -18,22 +17,14 @@
 </template>
 
 <script>
-import BasketItem from './BasketItem';
+import BasketItem from "./BasketItem";
+import basketMixin from "./../basketMixin";
 
 export default {
-  name: 'BasketItems',
+  name: "BasketItems",
+  mixins: [basketMixin],
   components: {
     BasketItem,
-  },
-  props: {
-    basket: {
-      type: Array,
-      default: () => [],
-    },
-    basketLoader: {
-      type: Boolean,
-      default: false,
-    },
   },
   computed: {
     totalQuantity() {
@@ -46,15 +37,15 @@ export default {
   },
   methods: {
     removeBasketItem({ basket }) {
-      this.$emit('update-basket', { basket, url: 'deleteBasket' });
+      this.$emit("update-basket", { basket, url: "deleteBasket" });
     },
     changeBasketItemQuantity({ basketItemIndex, quantity }) {
       let basket = this.$helpers.deepClone(this.basket);
 
       basket[basketItemIndex].quantity = quantity;
-      this.$emit('update-basket', {
+      this.$emit("update-basket", {
         basket: basket[basketItemIndex],
-        url: 'editBasket',
+        url: "editBasket",
       });
     },
   },

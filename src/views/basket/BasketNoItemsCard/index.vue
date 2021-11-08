@@ -7,7 +7,7 @@
         height="150"
       />
       <h3 class="text-uppercase my-4">
-        You Have no items in your shopping basket
+        {{ $t("basket.description.noBasketItem") }}
       </h3>
       <mini-shop-button
         :to="{ name: 'products' }"
@@ -18,7 +18,7 @@
         text-center
         class="mt-3 rounded-xs"
       >
-        Start Shopping
+        {{ $t("general.shopping.start") }}
       </mini-shop-button>
     </div>
   </div>
@@ -26,6 +26,6 @@
 
 <script>
 export default {
-  name: 'BasketNoItemsCard',
+  name: "BasketNoItemsCard",
 };
 </script>
