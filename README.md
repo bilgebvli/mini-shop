@@ -1,11 +1,6 @@
 # mini-shop
 
-## Project setup
-```
-npm install
-```
-
-### VSCode Configuration
+## VSCode Configuration
 ```
 {
   "vetur.format.defaultFormatter.html": "prettier",
@@ -25,6 +20,10 @@ npm install
   "eslint.codeActionsOnSave.mode": "problems",
   "scssFormatter.printWidth": 250,
 }
+```
+## Project setup
+```
+npm install
 ```
 
 ### Compiles and hot-reloads for development
