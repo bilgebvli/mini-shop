@@ -1,5 +1,26 @@
 # mini-shop
 
+## VSCode Configuration
+```
+{
+  "vetur.format.defaultFormatter.html": "prettier",
+  "vetur.format.defaultFormatterOptions": {
+    "prettier": {
+      "singleQuote": true,
+      "trailingComma": "es5"
+    },
+  },
+  "files.eol": "\n",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+  "eslint.codeActionsOnSave.mode": "problems",
+  "scssFormatter.printWidth": 250,
+}
+```
 ## Project setup
 ```
 npm install
