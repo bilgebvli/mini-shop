@@ -3,11 +3,11 @@
     <hr />
     <div class="row">
       <div class="col-lg-3">
-        <img
+        <mini-shop-image
           :src="basketItem.image"
-          class="card-img img-fluid"
-          :alt="basketItem.image"
-        />
+          :alt="basketItem.name"
+          class="card-img"
+        ></mini-shop-image>
       </div>
       <div class="col-lg-9">
         <div class="card-body">

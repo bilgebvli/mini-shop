@@ -1,10 +1,10 @@
 <template>
   <div>
-    <img
+    <mini-shop-image
       :src="productItem.image"
-      :alt="productItem.image"
-      class="card-img-top img-fluid mb-4"
-    />
+      :alt="productItem.name"
+      class="card-img mb-4"
+    ></mini-shop-image>
     <h5 class="card-title">{{ productItem.name }}</h5>
     <p class="d-inline mr-2">{{ $n(productItem.price, 'currency') }}</p>
     <mini-shop-button
@@ -19,6 +19,7 @@
     </mini-shop-button>
   </div>
 </template>
+
 <script>
 export default {
   name: 'ProductItemCard',
