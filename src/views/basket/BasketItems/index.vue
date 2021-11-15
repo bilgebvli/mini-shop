@@ -5,8 +5,8 @@
     >
     <template v-for="(basketItem, basketItemIndex) in basket">
       <basket-item
-        class="py-0"
         :key="basketItemIndex"
+        class="py-0"
         :basket-item="basketItem"
         :basket-item-index="basketItemIndex"
         @remove-basket-item="removeBasketItem"
@@ -22,10 +22,10 @@ import basketMixin from './../basketMixin';
 
 export default {
   name: 'BasketItems',
-  mixins: [basketMixin],
   components: {
     BasketItem,
   },
+  mixins: [basketMixin],
   computed: {
     totalQuantity() {
       let totalQuantity = 0;

@@ -12,8 +12,8 @@
       text-color="white"
       uppercase
       text-normal
-      @click="addBasket(productItem)"
       class="d-inline-block px-3 py-2 rounded-xs"
+      @click="addBasket(productItem)"
     >
       {{ $t('products.add') }}
     </mini-shop-button>

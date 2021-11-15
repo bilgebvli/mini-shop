@@ -6,7 +6,7 @@
     hide-content
   >
     <div class="container rounded">
-      <div class="row" v-if="basket.length">
+      <div v-if="basket.length" class="row">
         <div class="col-lg-9">
           <basket-items
             :basket-loader="basketLoader"
