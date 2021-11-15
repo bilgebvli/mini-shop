@@ -4,6 +4,7 @@
       "noBasketItem": "You have no items in your shopping basket"
     },
     "myCard": "My Card",
+    "name": "Basket",
     "placeOrder": "Place Order",
     "remove": "Remove"
   },
@@ -19,6 +20,7 @@
     }
   },
   "products": {
-    "add": "Add Basket"
+    "add": "Add Basket",
+    "name": "Products"
   }
 }

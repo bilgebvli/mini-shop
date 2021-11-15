@@ -4,6 +4,7 @@
       "noBasketItem": "Alışveriş sepetinizde ürün yok"
     },
     "myCard": "Alışveriş Sepetim",
+    "name": "Sepet",
     "placeOrder": "Sipariş Ver",
     "remove": "Kaldır"
   },
@@ -19,6 +20,7 @@
     }
   },
   "products": {
-    "add": "Sepete Ekle"
+    "add": "Sepete Ekle",
+    "name": "Ürünler"
   }
 }
