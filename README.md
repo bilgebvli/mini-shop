@@ -19,6 +19,11 @@
   "eslint.format.enable": true,
   "eslint.codeActionsOnSave.mode": "problems",
   "scssFormatter.printWidth": 250,
+  "workbench.colorTheme": "One Dark Pro",
+  "editor.fontSize": 11,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
 ```
 ## Project setup
