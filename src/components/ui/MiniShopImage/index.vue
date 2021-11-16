@@ -14,9 +14,9 @@ export default {
       type: String,
       default: null,
     },
-    lazy: {
-      type: Boolean,
-      default: false,
+    loading: {
+      type: String,
+      default: 'eager',
     },
     width: {
       type: [Number, String],
@@ -32,7 +32,7 @@ export default {
       return {
         src: this.src,
         alt: this.alt,
-        lazy: this.lazy,
+        loading: this.loading,
         width: this.width,
         height: this.height,
       };

@@ -10,7 +10,7 @@ describe('Components > UI > MiniShopImage.vue', () => {
   const wasteObject = {
       src: 'https://via.placeholder.com/150',
       alt: 'test',
-      lazy: true,
+      loading: 'lazy',
       width: 100,
       height: 100,
     },
@@ -43,11 +43,11 @@ describe('Components > UI > MiniShopImage.vue', () => {
         });
       });
     });
-    describe('lazy', () => {
+    describe('loading', () => {
       it(checksPropValue, () => {
-        expect(wrapper.vm.$options.props.lazy).to.deep.equal({
-          type: Boolean,
-          default: false,
+        expect(wrapper.vm.$options.props.loading).to.deep.equal({
+          type: String,
+          default: 'eager',
         });
       });
     });
