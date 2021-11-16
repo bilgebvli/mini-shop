@@ -1,12 +1,6 @@
 <template>
   <div class="container">
-    <mini-shop-page-loader
-      type="products"
-      transition="fade"
-      class="container-lg py-4"
-      :value="loader"
-      hide-content
-    >
+    <mini-shop-page-loader class="container-lg py-4" :value="loader">
       <div class="row">
         <product-list
           v-for="(productItem, index) in products"

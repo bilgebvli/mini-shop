@@ -8,3 +8,9 @@
     </div>
   </transition>
 </template>
+
+<script>
+export default {
+  name: 'PageNotFound',
+};
+</script>

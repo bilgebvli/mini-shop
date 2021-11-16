@@ -10,10 +10,9 @@
     <mini-shop-button
       bg-color="tangerine"
       text-color="white"
-      uppercase
       text-normal
       class="d-inline-block px-3 py-2 rounded-xs"
-      @click="addBasket(productItem)"
+      @click="addBasket"
     >
       {{ $t('products.add') }}
     </mini-shop-button>
@@ -34,25 +33,25 @@ export default {
     },
   },
   methods: {
-    async addBasket(productItem) {
+    async addBasket() {
       try {
         this.showAppLoading();
-        let apiUrl = null;
-        let quantity = 0;
-
-        const product = this.getBasketItem({
-          productId: productItem.productId,
-        });
+        let url = null,
+          quantity = 0;
+        const productItem = this.productItem,
+          product = this.getBasketItem({
+            productId: productItem.productId,
+          });
 
         if (this.basket.length && product) {
-          apiUrl = 'editBasket';
+          url = 'editBasket';
           quantity = product.quantity += 1;
         } else {
-          apiUrl = 'addBasket';
+          url = 'addBasket';
           quantity = 1;
         }
 
-        await this.$store.dispatch(`basket/${apiUrl}`, {
+        await this.$store.dispatch(`basket/${url}`, {
           basket: {
             ...productItem,
             quantity,

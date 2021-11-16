@@ -15,18 +15,6 @@ const helpers = {
         .join('-')
     );
   },
-  isEmptyOrNull(value) {
-    return value === null || value === '' || value === undefined;
-  },
-  capitalize(value) {
-    if (this.isEmptyOrNull(value)) return value;
-
-    return value
-      .toLowerCase()
-      .split(' ')
-      .map((val) => val.charAt(0).toUpperCase() + val.slice(1))
-      .join(' ');
-  },
   isJson(str) {
     try {
       JSON.parse(str);
