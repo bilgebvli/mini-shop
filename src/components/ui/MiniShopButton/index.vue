@@ -25,25 +25,17 @@ export default {
       type: Boolean,
       default: false,
     },
-    uppercase: {
-      type: Boolean,
-      default: false,
-    },
     disabled: {
       type: Boolean,
       default: false,
     },
-    textLeft: {
-      type: Boolean,
-      default: false,
+    textAlign: {
+      type: String,
+      default: 'center',
     },
-    textRight: {
-      type: Boolean,
-      default: false,
-    },
-    textCenter: {
-      type: Boolean,
-      default: true,
+    textTransform: {
+      type: String,
+      default: 'uppercase',
     },
     textNormal: {
       type: Boolean,
@@ -56,23 +48,21 @@ export default {
   },
   computed: {
     isRoute() {
-      return !!this.to;
+      return Boolean(this.to);
     },
     buttonOptions() {
       return {
         class: {
           [this.componentName]: true,
-          [`${this.componentName}--block`]: this.block,
-          [`${this.componentName}--flat`]: this.flat,
-          [`${this.componentName}--uppercase`]: this.uppercase,
-          [`${this.componentName}--text-left`]: this.textLeft,
-          [`${this.componentName}--text-right`]: this.textRight,
-          [`${this.componentName}--text-center`]: this.textCenter,
           [`${this.componentName}--text-normal`]: this.textNormal,
           [`${this.componentName}--route`]: this.isRoute,
           [`${this.componentName}--disabled`]: this.disabled,
           [`bg-${this.bgColor}`]: true,
           [`text-${this.textColor}`]: true,
+          [`text-${this.textAlign}`]: true,
+          [`text-${this.textTransform}`]: true,
+          'btn-block': this.block,
+          'rounded-0': this.flat,
         },
         disabled: this.disabled,
       };
