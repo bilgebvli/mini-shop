@@ -42,9 +42,9 @@
         </content-loader>
       </template>
     </div>
-    <transition :name="transition">
+    <transition name="fade">
       <div v-if="showContent">
-        <slot v-bind="{ show: showContent }"></slot>
+        <slot></slot>
       </div>
     </transition>
   </div>
@@ -62,14 +62,6 @@ export default {
       type: Boolean,
       default: false,
     },
-    hideContent: {
-      type: Boolean,
-      default: false,
-    },
-    transition: {
-      type: String,
-      default: null,
-    },
     noContainer: {
       type: Boolean,
       default: false,
@@ -77,7 +69,7 @@ export default {
   },
   computed: {
     showContent() {
-      return !this.hideContent || (this.hideContent && !this.value);
+      return !this.value;
     },
   },
 };
