@@ -5,7 +5,7 @@ import MiniShopPreloader from '@/components/ui/MiniShopPreloader/index.vue';
 config.silent = true;
 config.showDeprecationWarnings = false;
 
-describe('Components > ui > MiniShopPreloader.vue', () => {
+describe('Components > UI > MiniShopPreloader.vue', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallowMount(MiniShopPreloader);

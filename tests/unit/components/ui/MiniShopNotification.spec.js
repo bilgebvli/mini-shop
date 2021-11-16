@@ -1,10 +1,11 @@
 import { expect } from 'chai';
 import { shallowMount, config } from '@vue/test-utils';
 import MiniShopNotification from '@/components/ui/MiniShopNotification/index.vue';
+
 config.silent = true;
 config.showDeprecationWarnings = false;
 
-describe('Components > ui > MiniShopNotification.vue', () => {
+describe('Components > UI > MiniShopNotification.vue', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallowMount(MiniShopNotification, {
@@ -36,7 +37,7 @@ describe('Components > ui > MiniShopNotification.vue', () => {
           group: 'test',
           position: 'top right',
           width: 350,
-          classes: 'vue-notification mt-lg-4 p-3',
+          classes: 'vue-notification mt-lg-4 mr-0 p-3 text-center text-lg-left',
           closeOnClick: true,
         });
       });

@@ -5,7 +5,7 @@ import MiniShopImage from '@/components/ui/MiniShopImage/index.vue';
 config.silent = true;
 config.showDeprecationWarnings = false;
 
-describe('Components > ui > MiniShopImage.vue', () => {
+describe('Components > UI > MiniShopImage.vue', () => {
   let wrapper;
   const wasteObject = {
       src: 'https://via.placeholder.com/150',
