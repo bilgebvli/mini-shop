@@ -1,11 +1,11 @@
 <template>
   <div v-bind="cardOptions">
     <div v-if="loading" v-bind="cardLoaderOptions"></div>
-    <div class="card-header bg-white pt-4 border-0" v-if="header">
+    <div v-if="isHeader" class="card-header bg-white pt-4 border-0">
       <slot name="header"></slot>
     </div>
     <div class="card-body py-0"><slot></slot></div>
-    <div class="card-footer" v-if="footer">
+    <div v-if="isFooter" class="card-footer">
       <slot name="footer"></slot>
     </div>
   </div>
@@ -21,11 +21,11 @@ export default {
     },
   },
   computed: {
-    header() {
-      return !!this.$slots['header'];
+    isHeader() {
+      return Boolean(this.$slots['header']);
     },
-    footer() {
-      return !!this.$slots['footer'];
+    isFooter() {
+      return Boolean(this.$slots['footer']);
     },
     cardLoaderOptions() {
       return {

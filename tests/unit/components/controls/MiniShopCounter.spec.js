@@ -1,13 +1,21 @@
+import Vue from 'vue';
 import { expect } from 'chai';
 import { shallowMount, config } from '@vue/test-utils';
 import MiniShopCounter from '@/components/controls/MiniShopCounter/index.vue';
+import GlobalMixin from '@/mixins/global.mixin.js';
+import Helpers from '@/utils/helpers.js';
+
 config.silent = true;
 config.showDeprecationWarnings = false;
+Vue.prototype.helpers = Helpers;
 
 describe('Components > Controls > MiniShopCounter.vue', () => {
   let wrapper;
+  const checksPropValue = 'checks prop acceptable value type.';
   beforeEach(() => {
-    wrapper = shallowMount(MiniShopCounter);
+    wrapper = shallowMount(MiniShopCounter, {
+      mixins: [GlobalMixin],
+    });
   });
 
   describe('General', () => {
@@ -18,7 +26,7 @@ describe('Components > Controls > MiniShopCounter.vue', () => {
 
   describe('Props', () => {
     describe('value', () => {
-      it('checks prop acceptable value type.', () => {
+      it(checksPropValue, () => {
         expect(wrapper.vm.$options.props.value).to.deep.equal({
           type: [Number, String],
           default: 0,
@@ -26,14 +34,14 @@ describe('Components > Controls > MiniShopCounter.vue', () => {
       });
     });
     describe('min', () => {
-      it('checks prop acceptable value type.', () => {
+      it(checksPropValue, () => {
         expect(wrapper.vm.$options.props.min).to.deep.equal({
           type: Number,
           default: 0,
         });
       });
     });
-    describe('max', () => {
+    describe(checksPropValue, () => {
       it('checks prop acceptable value type.', () => {
         expect(wrapper.vm.$options.props.max).to.deep.equal({
           type: Number,
@@ -41,7 +49,7 @@ describe('Components > Controls > MiniShopCounter.vue', () => {
         });
       });
     });
-    describe('disabled', () => {
+    describe(checksPropValue, () => {
       it('checks prop acceptable value type.', () => {
         expect(wrapper.vm.$options.props.disabled).to.deep.equal({
           type: Boolean,

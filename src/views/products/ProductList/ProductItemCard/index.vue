@@ -1,24 +1,24 @@
 <template>
   <div>
-    <img
+    <mini-shop-image
       :src="productItem.image"
-      :alt="productItem.image"
-      class="card-img-top img-fluid mb-4"
-    />
+      :alt="productItem.name"
+      class="card-img mb-4"
+    ></mini-shop-image>
     <h5 class="card-title">{{ productItem.name }}</h5>
     <p class="d-inline mr-2">{{ $n(productItem.price, 'currency') }}</p>
     <mini-shop-button
       bg-color="tangerine"
       text-color="white"
-      uppercase
       text-normal
-      @click="addBasket(productItem)"
       class="d-inline-block px-3 py-2 rounded-xs"
+      @click="addBasket"
     >
       {{ $t('products.add') }}
     </mini-shop-button>
   </div>
 </template>
+
 <script>
 export default {
   name: 'ProductItemCard',
@@ -33,25 +33,25 @@ export default {
     },
   },
   methods: {
-    async addBasket(productItem) {
+    async addBasket() {
       try {
         this.showAppLoading();
-        let apiUrl = null;
-        let quantity = 0;
-
-        const product = this.getBasketItem({
-          productId: productItem.productId,
-        });
+        let url = null,
+          quantity = 0;
+        const productItem = this.productItem,
+          product = this.getBasketItem({
+            productId: productItem.productId,
+          });
 
         if (this.basket.length && product) {
-          apiUrl = 'editBasket';
+          url = 'editBasket';
           quantity = product.quantity += 1;
         } else {
-          apiUrl = 'addBasket';
+          url = 'addBasket';
           quantity = 1;
         }
 
-        await this.$store.dispatch(`basket/${apiUrl}`, {
+        await this.$store.dispatch(`basket/${url}`, {
           basket: {
             ...productItem,
             quantity,

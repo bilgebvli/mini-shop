@@ -1,15 +1,15 @@
+import Vue from 'vue';
 import { expect } from 'chai';
 import { shallowMount, config } from '@vue/test-utils';
 import MiniShopCard from '@/components/ui/MiniShopCard/index.vue';
 import GlobalMixin from '@/mixins/global.mixin.js';
 import Helpers from '@/utils/helpers.js';
-import Vue from 'vue';
 
 config.silent = true;
 config.showDeprecationWarnings = false;
 Vue.prototype.helpers = Helpers;
 
-describe('Components > Ui > MiniShopCard.vue', () => {
+describe('Components > UI > MiniShopCard.vue', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallowMount(MiniShopCard, {
@@ -18,7 +18,7 @@ describe('Components > Ui > MiniShopCard.vue', () => {
       stubs: ['slot'],
       slots: {
         header: '<div>header</div>',
-        footer: '<div>header</div>',
+        footer: '<div>footer</div>',
       },
     });
   });

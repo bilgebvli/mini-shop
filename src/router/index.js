@@ -1,32 +1,9 @@
 import Vue from 'vue';
+import i18n from '@/locales';
 import VueRouter from 'vue-router';
-import Products from '@/views/products';
+import routes from './routes';
 
 Vue.use(VueRouter);
-
-const routes = [
-  {
-    path: '*',
-    component: () =>
-      import(/* webpackChunkName: "pageNotFound" */ '@/views/pageNotFound'),
-  },
-  {
-    name: 'products',
-    path: '/',
-    component: Products,
-  },
-  {
-    name: 'product',
-    path: '/product',
-    component: () =>
-      import(/* webpackChunkName: "product" */ '@/views/product'),
-  },
-  {
-    name: 'basket',
-    path: '/basket',
-    component: () => import(/* webpackChunkName: "basket" */ '@/views/basket'),
-  },
-];
 
 const router = new VueRouter({
   mode: 'history',
@@ -34,4 +11,11 @@ const router = new VueRouter({
   routes,
 });
 
+//Set Page Title
+router.afterEach((to) => {
+  setTimeout(() => {
+    const { pageTitle } = to.meta;
+    document.title = `${i18n.t(pageTitle)} | ${process.env.VUE_APP_TITLE}`;
+  }, 250);
+});
 export default router;

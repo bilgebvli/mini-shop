@@ -13,9 +13,7 @@
         :to="{ name: 'products' }"
         bg-color="tangerine"
         text-color="white"
-        uppercase
         text-normal
-        text-center
         class="mt-3 rounded-xs"
       >
         {{ $t('general.shopping.start') }}

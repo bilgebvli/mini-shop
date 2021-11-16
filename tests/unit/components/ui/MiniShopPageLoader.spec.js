@@ -5,8 +5,9 @@ import MiniShopPageLoader from '@/components/ui/MiniShopPageLoader/index.vue';
 config.silent = true;
 config.showDeprecationWarnings = false;
 
-describe('Components > ui > MiniShopPageLoader.vue', () => {
+describe('Components > UI > MiniShopPageLoader.vue', () => {
   let wrapper;
+  const checksPropValue = 'checks prop acceptable value type.';
   beforeEach(() => {
     wrapper = shallowMount(MiniShopPageLoader);
   });
@@ -19,31 +20,15 @@ describe('Components > ui > MiniShopPageLoader.vue', () => {
 
   describe('Props', () => {
     describe('value', () => {
-      it('checks prop acceptable value type.', () => {
+      it(checksPropValue, () => {
         expect(wrapper.vm.$options.props.value).to.deep.equal({
           type: Boolean,
           default: false,
         });
       });
     });
-    describe('hideContent', () => {
-      it('checks prop acceptable value type.', () => {
-        expect(wrapper.vm.$options.props.hideContent).to.deep.equal({
-          type: Boolean,
-          default: false,
-        });
-      });
-    });
-    describe('transition', () => {
-      it('checks prop acceptable value type.', () => {
-        expect(wrapper.vm.$options.props.transition).to.deep.equal({
-          type: String,
-          default: null,
-        });
-      });
-    });
     describe('noContainer', () => {
-      it('checks prop acceptable value type.', () => {
+      it(checksPropValue, () => {
         expect(wrapper.vm.$options.props.noContainer).to.deep.equal({
           type: Boolean,
           default: false,
@@ -54,7 +39,7 @@ describe('Components > ui > MiniShopPageLoader.vue', () => {
   describe('Computed', () => {
     describe('showContent', () => {
       it('checks the value returned when props change.', async () => {
-        await wrapper.setProps({ value: true });
+        await wrapper.setProps({ value: false });
         expect(wrapper.vm.showContent).to.be.true;
       });
     });

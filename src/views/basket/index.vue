@@ -1,12 +1,7 @@
 <template>
-  <mini-shop-page-loader
-    :value="loader"
-    transition="fade"
-    class="container-lg py-4"
-    hide-content
-  >
+  <mini-shop-page-loader :value="loader" class="container-lg py-4">
     <div class="container rounded">
-      <div class="row" v-if="basket.length">
+      <div v-if="basket.length" class="row">
         <div class="col-lg-9">
           <basket-items
             :basket-loader="basketLoader"

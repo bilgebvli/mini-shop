@@ -6,9 +6,7 @@
       bg-color="tangerine"
       text-color="white"
       block
-      uppercase
       text-normal
-      text-center
       v-text="`<  ${$t('general.shopping.continue')}`"
     >
     </mini-shop-button>
@@ -18,7 +16,6 @@
       text-color="black"
       class="rounded-xs mt-3"
       block
-      uppercase
       text-normal
       @click="placeOrder"
     >

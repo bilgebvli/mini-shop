@@ -16,7 +16,7 @@ export default {
         group: this.group,
         position: 'top right',
         width: 350,
-        classes: 'vue-notification mt-lg-4 p-3',
+        classes: 'vue-notification mt-lg-4 mr-0 p-3 text-center text-lg-left',
         closeOnClick: true,
       };
     },
